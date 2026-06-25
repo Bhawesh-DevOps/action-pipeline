@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "messi007"{
-  name = "messi0077"
+  name = "messi007711"
   location = "central india"
 }
 resource "azurerm_storage_account" "stg1" {
@@ -11,5 +11,5 @@ resource "azurerm_storage_account" "stg1" {
 }
 resource "azurerm_storage_container" "conta1" {
   name = "container007"
-  storage_account_id = azurerm_storage_account.stg1 
+  storage_account_name = azurerm_storage_account.stg1.name
 }
