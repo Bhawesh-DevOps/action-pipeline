@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Azure Login
-        uses: azure/login@v2
+      - name: az Login
+        uses: az login --service-principal --username 81d20314-ef05-46eb-8bdf-473e9e20664f --password vXo8Q~rv~pWtle3x1wU3JgM.lB7CLvWIQOU3GbCC --tenant 2a12578d-9130-4f98-9fe6-c8a422505a24
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
