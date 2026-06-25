@@ -1,7 +1,6 @@
 
 resource "azurerm_resource_group" "messi007" {
   name     = "messi007711"
-=======
 resource "azurerm_resource_group" "messi007"{
   name = "messi007711"
 
@@ -15,7 +14,6 @@ resource "azurerm_storage_account" "stg1" {
   account_replication_type = "LRS"
 }
 resource "azurerm_storage_container" "conta1" {
-<<<<<<< HEAD
   name               = "container007"
   storage_account_name = azurerm_storage_account.stg1.name
 }
