@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 resource "azurerm_resource_group" "messi007" {
   name     = "messi007711"
 =======
 resource "azurerm_resource_group" "messi007"{
   name = "messi007711"
->>>>>>> 0ecd9099fcf291520a0e43cbf0b31e7465463eef
+
   location = "central india"
 }
 resource "azurerm_storage_account" "stg1" {
@@ -19,8 +19,7 @@ resource "azurerm_storage_container" "conta1" {
   name               = "container007"
   storage_account_name = azurerm_storage_account.stg1.name
 }
-=======
   name = "container007"
   storage_account_name = azurerm_storage_account.stg1.name
 }
->>>>>>> 0ecd9099fcf291520a0e43cbf0b31e7465463eef
+
