@@ -6,7 +6,7 @@ terraform {
     }
   }   
    backend "azurerm" {
-    resource_group_name  = "messi0077"
+    resource_group_name  = "messi007711"
     storage_account_name = "messistg1"  
     container_name = "container007"
     key = "tfstatefile"
