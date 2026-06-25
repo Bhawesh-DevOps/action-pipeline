@@ -1,34 +1,37 @@
-
 name: Terraform-Backend
+
 on:
-
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
-  workflow_dispatch:
-
+  workflow_dispatch:  
 jobs:
-  build:
-    runs-on: self-hosted
+ build:
+  runs-on: self-hosted
 
-    steps:
-      - uses: actions/checkout@v4
+  steps:
+  - name: Checkout Code
+    uses: actions/checkout@v4
 
-      - name: az Login
-        uses: az login --service-principal --username 81d20314-ef05-46eb-8bdf-473e9e20664f --password vXo8Q~rv~pWtle3x1wU3JgM.lB7CLvWIQOU3GbCC --tenant 2a12578d-9130-4f98-9fe6-c8a422505a24
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+  - name: Azure Login
+    uses: azure/login@v2
+    with:
+      client-id: ${{ secrets.AZURE_CLIENT_ID }}
+      tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
 
-      - name: Terraform Init
-        run: terraform init
-      - name: Terraform plan
-        run: terraform plan
-      - name: Terraform Validate
-        run: terraform validate
-      - name: Terraform Plan
-        run: terraform plan
+  - name: Setup Terraform
+    uses: hashicorp/setup-terraform@v3
 
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+  - name: Terraform Init
+    run: terraform init
 
+  - name: Terraform Validate
+    run: terraform validate
 
+  - name: Terraform Plan
+    run: terraform plan
+
+  - name: Terraform Apply
+    run: terraform apply -auto-approve
