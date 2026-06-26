@@ -6,10 +6,10 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "numero"
-    storage_account_name = "hulku"
-    container_name       = "selenagomez"
-    key                  = "tfstatefile"
+    resource_group_name  = "milkha001"
+    storage_account_name = "hulku1"
+    container_name       = "selenagomez1"
+    key                  = "tfstatefile1"
   }
 
 }
